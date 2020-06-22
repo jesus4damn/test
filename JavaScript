@@ -54,12 +54,13 @@ function statement(invoice) {
         if ("comedy" === perf.type) volumeCredits += Math.floor(perf.audience / 10);
 
         // Вывод строки счета
+        // Я понятия не имею почему здесь делится на 100, видимо все до этого считалось в копейках, менять не буду, ошибка разве что логическая)))
         result += ` ${perf.playId}: ${format(thisAmount / 100)}`;
         result += ` (${perf.audience} мест)\n`;
         totalAmount += thisAmount;
     }
 
-
+    //Здесь тоже самое, делится на 100 зачем-то
     result += `Итого с вас ${format(totalAmount/100)}\n`;
     result += `Вы заработали ${volumeCredits} бонусов\n`;
     return result;
